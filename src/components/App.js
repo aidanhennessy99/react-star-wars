@@ -42,11 +42,12 @@ class App extends Component {
 render() {
     return (
     <div className="PageHeader">
-      <h1>Welcome</h1>
+      <h1>Welcome aboard the Millenium Falcon!</h1>
       
       
       <div className="pageStyle">
-       <h1>Planet</h1>
+       <h5>Please enter a Star Wars Planet into the SearchBar below, click on the planet link that pops up, read the description and decide from there whether you want to go there or not.</h5>
+        <h1>Planet</h1>
         <div>
         <SearchBar SearchPlanets={this.searchPlanetByName} />
         </div>

@@ -18,7 +18,7 @@ class AllPlanets extends React.Component {
             ))
           }
         </ul> 
-        <h1>Planet List</h1>   
+        <h5>Planet List</h5>   
         
         <Link to="/planet/new"><button>Add Planet</button></Link>    
       </div>

@@ -6,7 +6,7 @@ body {
   }
 
   html, body {
-    background-image: url('https://3.bp.blogspot.com/-mNAaWGN112c/Vv8SCMSGZdI/AAAAAAAAJpE/uzA5W77mflkjI7_XGsNffvLsQIqugQk9w/s1600/falcon_cockpit_v005_1500_-1536x864-176861471636.jpg');
+    background-color: black;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -16,7 +16,9 @@ body {
 
   .PageHeader {
     text-align: center;
+    background-color: black; 
     color: yellow
+    
 
    
   }

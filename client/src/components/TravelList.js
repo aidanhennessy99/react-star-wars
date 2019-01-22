@@ -4,19 +4,28 @@ import PropTypes from 'prop-types';
 import PlanetInListDetail from './PlanetInListDetail';
 
 
-class TravelList extends React.Component {
-  render () { 
+const TravelList = ({travelList, removeFromTravelList}) => {
+
+    // const {name} = props.match.params;
+    // const travelList = planets.find(p => p.name === name)
+  
+    const handleClick = (_id) => {
+        removeFromTravelList({_id})
+          
+      }
     return (
       <div className="lists">      
         <ul>
           {          
-            this.props.travelList.map(p => (
+            travelList.map(p => (
               <li key={p._id} className="list">
              
                Name: {p.name}
                 <br />               
-                <Link to={`/list/${p._id}`}>Details</Link>    
-                <br />         
+                <Link to={`/list/${p._id}`}>Details   </Link> 
+                
+                <Link to={'/'}> <button type="button" onClick={handleClick}> x </button></Link>
+            
               </li>            
             ))
           }
@@ -24,7 +33,7 @@ class TravelList extends React.Component {
       </div>
     );
   }
-}
+
 
 TravelList.propTypes = {
   travelList: PropTypes.arrayOf(PropTypes.shape(PlanetInListDetail.propTypes)).isRequired

@@ -2,14 +2,14 @@ import { Switch, Route} from 'react-router-dom'
 import React, { Component } from 'react';
 import Routes from './Routes';
 import SearchBar from './SearchBar';
-import SearchBar2 from './SearchBar2';
 import TravelList from './TravelList';
 
 
 class App extends Component {
     constructor(props) {
         super(props);
-       
+        var tripData = this.fetchData();
+        console.log(tripData);       
         this.state = {
             planets: [],
             travelList: []
@@ -38,8 +38,8 @@ class App extends Component {
     .then((res) => {
       return res.json()
     }) 
-    .then((res) => {
-      this.setState({ travelList: this.state.travelList.concat([res]) })    
+    .then((res) => {     
+      this.setState({ travelList: this.state.travelList.concat(res) }) 
       console.log('CURRENT TRAVEL LIST: ', this.state.travelList);                
     })
    
@@ -59,18 +59,16 @@ class App extends Component {
   });
   }
 
-  
-
-  removeFromTravelList = (TravelListPlanet) => {
-    const {name } = TravelListPlanet;
-    fetch('http://localhost:8000/planets/:planet', {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({name }) 
-  }).then(res => res.text())
-  .then(res => alert(res))
-  console.log('TRAVEL LIST REDUCED: ', this.state.travelList)
-
+  removeFromTravelList = (_id) => {
+    // const {_id, name, climate, terrain, population, diameter, surface_water } = planet;
+    fetch('http://localhost:8000/planets/5c44e107286a9c33c498107c', { method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },  
+      // body: JSON.stringify({_id, name, climate, terrain, population, diameter, surface_water }), 
+    })
+    .then(res => res.json().then((res) => {     
+      this.setState({ travelList: this.state.travelList.splice([res]) }) 
+      console.log('TRAVEL LIST REDUCED: ', this.state.travelList)            
+    }));
   }
  
   searchPlanetByName = (event) => {
@@ -86,19 +84,6 @@ class App extends Component {
     })  
 }
 
-  searchListByPage = (e) => {
-  fetch('http://localhost:8000/planets?page='+ e.target.value)
-    .then(response => response.json())
-    .then(response => {
-     //let searchResult = JSON.parse(responseBody).results;
-      console.log(response);
-      this.setState({ travelList: response }, () => {
-      console.log(this.state.travelList);
-    });
-    
-  })  
-  }
-
   
 render() {
 
@@ -109,11 +94,9 @@ render() {
        <h5>Please enter a Star Wars Planet into the SearchBar below, click on the planet link that pops up, read the description and decide from there whether you want to go there or not.</h5>
         <h1>Planet</h1>
         <div>
-        <SearchBar SearchPlanets={this.searchPlanetByName} />
-        <h1>List Trip</h1>
-        <button onClick={this.fetchData}>GENERATE</button>
-        <SearchBar2 SearchList={this.searchListByPage} />
-            <TravelList travelList={this.state.travelList} />
+          <SearchBar SearchPlanets={this.searchPlanetByName} />
+          <h1>List Trip</h1>
+          <TravelList travelList={this.state.travelList} removeFromTravelList={this.removeFromTravelList}/>         
         </div>
         <div>
         <Switch>
@@ -124,7 +107,7 @@ render() {
             <Routes addPlanet={this.addPlanet} planets={this.state.planets} addToTravelList={this.addToTravelList} />
           )}/>     
             <Route path='/list' render={() => (
-            <Routes travelList={this.state.travelList}  />
+            <Routes travelList={this.state.travelList} removeFromTravelList={this.removeFromTravelList} />
           )}/> 
         </Switch>      
         

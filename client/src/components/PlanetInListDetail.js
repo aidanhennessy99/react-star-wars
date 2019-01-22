@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import React from "react";
 
-const PlanetInListDetail = ({props, travelList, fetchData}) => {
+const PlanetInListDetail = ({props, travelList}) => {
   const {_id} = props.match.params;
   console.log(_id)
   const TravelListPlanet = travelList.find(p => p._id === _id)
@@ -9,11 +9,6 @@ const PlanetInListDetail = ({props, travelList, fetchData}) => {
 
   if (!TravelListPlanet) {
     return <div>Sorry But the Planet was not found<Link to='/'> Back</Link></div>;   
-  }
-
-  const handleClick = () => {
-    fetchData(TravelListPlanet)
-    props.history.goBack('/');
   }
  
   return (
@@ -27,7 +22,6 @@ const PlanetInListDetail = ({props, travelList, fetchData}) => {
         <h5>Surface Water: {TravelListPlanet.surface_water}</h5>
        {/* Handle Submit Click is going to be needed in this constant.  */}
         <Link to='/'>Main Menu</Link>
-        <button type="button" onClick={handleClick}>Remove Planet to Travel List</button>
       </div>
 
   )

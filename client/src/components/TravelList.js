@@ -10,7 +10,7 @@ const TravelList = ({travelList, removeFromTravelList}) => {
     // const travelList = planets.find(p => p.name === name)
   
     const handleClick = (_id) => {
-        removeFromTravelList({_id})
+        removeFromTravelList(_id)
           
       }
     return (
@@ -24,7 +24,7 @@ const TravelList = ({travelList, removeFromTravelList}) => {
                 <br />               
                 <Link to={`/list/${p._id}`}>Details   </Link> 
                 
-                <Link to={'/'}> <button type="button" onClick={handleClick}> x </button></Link>
+                <button type="button" onClick={handleClick}> x </button>
             
               </li>            
             ))

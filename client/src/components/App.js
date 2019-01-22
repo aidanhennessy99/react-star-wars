@@ -61,12 +61,12 @@ class App extends Component {
 
   removeFromTravelList = (_id) => {
     // const {_id, name, climate, terrain, population, diameter, surface_water } = planet;
-    fetch('http://localhost:8000/planets/5c44e107286a9c33c498107c', { method: 'DELETE',
+    fetch('http://localhost:8000/planets/:planet', { method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },  
       // body: JSON.stringify({_id, name, climate, terrain, population, diameter, surface_water }), 
     })
-    .then(res => res.json().then((res) => {     
-      this.setState({ travelList: this.state.travelList.splice([res]) }) 
+    .then(res => res.text().then((res) => {     
+      this.setState({ travelList: this.state.travelList.splice(res[1]) }) 
       console.log('TRAVEL LIST REDUCED: ', this.state.travelList)            
     }));
   }
@@ -95,8 +95,6 @@ render() {
         <h1>Planet</h1>
         <div>
           <SearchBar SearchPlanets={this.searchPlanetByName} />
-          <h1>List Trip</h1>
-          <TravelList travelList={this.state.travelList} removeFromTravelList={this.removeFromTravelList}/>         
         </div>
         <div>
         <Switch>
@@ -113,7 +111,11 @@ render() {
         
       </div>
       </div>
-     
+      <div className="pageStyle2">
+          <h1>List Trip</h1>
+          <TravelList travelList={this.state.travelList} removeFromTravelList={this.removeFromTravelList}/>         
+        
+        </div>
       </div>
       
     );

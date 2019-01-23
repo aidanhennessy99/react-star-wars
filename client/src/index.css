@@ -16,17 +16,58 @@ body {
   }
 
 
+.navWide {
+  text-align: center;
+  background-color: orange; 
+  color: yellow
+
+}
+
+.HomeNavWide {
+  text-align: left;
+  background-color: orange; 
+  color: yellow
+
+}
+
+  .HomePage {
+    text-align: center;
+    background-color: black; 
+    color: yellow
+  }
+
+  .HomePageStyle {
+    width: 100%;
+   float: center;
+    overflow:auto;
+  
+    position: relative;
+  
+    text-align: left;
+  
+    box-sizing: border-box;
+  
+    padding: 10px;
+  
+    margin-bottom: 30px;
+  
+    border: 10px green solid;
+  
+    cursor: pointer;
+    background-color: white; 
+    color: black;
+  }
 
   .PageHeader {
     text-align: center;
     background-color: black; 
     color: yellow
-    
-
-   
   }
+
+  
   .pageStyle {
     width: 35%;
+    float: left;
     overflow:auto;
  
     position: relative;
@@ -49,6 +90,7 @@ body {
   
 .pageStyle2 {
   width: 35%;
+ float: center;
   overflow:auto;
 
   position: relative;
@@ -68,5 +110,27 @@ body {
   color: black;
 }
 
- 
+.pageStyle3 {
+  width: 30%;
+
+  overflow:auto;
+
+  position: relative;
+
+  text-align: left;
+
+  box-sizing: border-box;
+
+  padding: 10px;
+
+  margin-bottom: 30px;
+
+  border: 10px green solid;
+
+  cursor: pointer;
+  background-color: white; 
+  color: black;
+}
+
+  
   

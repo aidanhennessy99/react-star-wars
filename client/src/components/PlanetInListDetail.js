@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import React from "react";
 
+
 const PlanetInListDetail = ({props, travelList}) => {
   const {_id} = props.match.params;
   console.log(_id)
@@ -13,7 +14,7 @@ const PlanetInListDetail = ({props, travelList}) => {
  
   return (
       <div className="details-of-List">   
-           
+            <img src={Image/TravelListPlanet.name.jpg}  alt="Img" height="100" width="100" />
         <h1>Name: {TravelListPlanet.name}</h1>    
         <h2>Climate: {TravelListPlanet.climate}</h2>
         <h3>Population: {TravelListPlanet.population}</h3>

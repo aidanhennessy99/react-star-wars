@@ -3,7 +3,8 @@ import React from 'react';
 import PlanetDetail from './PlanetDetail';
 import PlanetInListDetail from './PlanetInListDetail';
 import Planets from './Planets';
-import TravelList from './TravelList'
+import TravelList from './TravelList';
+import Home from './Home';
 
 
 const Routes = ({planets, addPlanet, addToTravelList, travelList, removeFromTravelList}) => (
@@ -12,6 +13,10 @@ const Routes = ({planets, addPlanet, addToTravelList, travelList, removeFromTrav
       <Route exact path='/' render={() => (
       <Planets planets={planets} removeFromTravelList={removeFromTravelList}/>    
     )}/>    
+
+      <Route path='/home' render={(props) => (
+          <Home props={props}/>    
+        )}/> 
 
        <Route path= '/planet/:name' render={(props) => (
       <PlanetDetail props={props} planets={planets} addPlanet={addPlanet} addToTravelList={addToTravelList} removeFromTravelList={removeFromTravelList}/>     

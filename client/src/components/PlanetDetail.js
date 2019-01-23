@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom'
 import React from "react";
+var baseURI = "../assets/"
+var endURI=".PNG"
+
+
+
 
 const PlanetDetail = ({props, planets, addToTravelList}) => {
   const {name} = props.match.params;
@@ -15,7 +20,10 @@ const PlanetDetail = ({props, planets, addToTravelList}) => {
   }
   return (
       <div className="details">
-        <img src="http://xavier.lebozec.free.fr/serie%205/site/geonosis/geonosis2.jpg" alt="Img" height="100" width="100" />
+        
+        <img src = {baseURI + planet.name + endURI} alt="img" height="100" width="100"/>
+
+          
         
         <h1>Name: {planet.name}</h1>    
         <h2>Climate: {planet.climate}</h2>

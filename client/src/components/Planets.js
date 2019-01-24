@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PlanetDetail from './PlanetDetail';
 
-
+//This class enables you to view the planet links based on what letters you enter into the searchbar. 
 class Planets extends React.Component {
   render () { 
     return (
@@ -12,7 +12,7 @@ class Planets extends React.Component {
           {          
             this.props.planets.map(p => (
               <li key={p.name}>
-                <Link to={`/planet/${p.name}`}>{p.name}</Link>              
+                <Link to={`/${p.name}`}>{p.name}</Link>              
               </li>            
             ))
           }

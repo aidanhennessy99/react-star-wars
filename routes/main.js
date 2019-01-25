@@ -64,7 +64,7 @@ router.get('/generate-dummy-data', async (req, res) => {
             surface_water: planet.surface_water
         })
         newPlanet.save()
-        res.send(planet)
+        res.send(newPlanet)
       
   })
 

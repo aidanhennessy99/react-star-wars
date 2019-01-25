@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+// import Button from 'react-bootstrap/Button';
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 import TravelList from './TravelList';
@@ -14,7 +15,8 @@ class App extends Component {
         this.state = {
             planets: [],
             travelList: [],
-            viewTravelList: Boolean
+            viewTravelList: false,
+            viewSearchList: true
         }      
     }
 //This enables the fetchData two functions below to display planets from your database. 
@@ -94,23 +96,24 @@ render() {
 
     return (
 <div>
+
+  {/* //Change button class to classname. */}
   <div className="PageHeader">
   {/* This is the Page Header that is colored in light blue and down below is the navbar with a search link and a travel list link.  */}
     <nav>
       <div className="navWide">    
           {/* <a href="/"><img src={Lens} class="center" width="30" height="30" /><font size="12" color="white">Search</font></a> */}
-          <Link to="/"><img src={Lens} class="center" width="30" height="30" /><button onClick={() => this.setState({ viewTravelList: false })}>Search</button> </Link>
-          <Link to="/list"><img src={ListPad} class="right" width="30" height="30" /><button onClick={() => this.setState({ viewTravelList: true })}>ListPad</button> </Link>
+          <Link to="/"><img src={Lens} class="center" width="30" height="30" /><a onClick={() => this.setState({ viewTravelList: false, viewSearchList: true })}><font size="12" color="white">Search</font></a> </Link>
+          <Link to="/list"><img src={ListPad} class="right" width="30" height="30" /><a onClick={() => this.setState({ viewTravelList: true, viewSearchList: false })}><font size="12" color="white">ListPad</font></a> </Link>
           {/* <a href="/list" ><img src={ListPad} class="right" width="30" height="30" /><font size="12" color="white">ListPad</font></a> */}
       </div>
     </nav>
   </div>
   {/* Below is the content of the main page. The main page is also the search page, including the search bar. In the searchbar you can look up any planet in the Star Wars API. The index (/) route enables you to search for a planet while the index and name router (/:name) enables you to look up the details of the planet whose link you clicked on.  */}
-  <div className="pageStyle">
-      <h5>Welcome aboard the Millenium Falcon. We are excited to take you to the planet of your choosing. After clicking on the Searchbar, Please search for the planet you want to choose, look at the details that pop up and decide from there whether you want to add it to your travel list or not. If you choose to submit it, it will appear on your travel list that will appear when you click on the listpad. Hope you enjoy.
+  {this.state.viewSearchList && <div className="pageStyle">
+      <h5>Welcome aboard the Millenium Falcon. We are excited to take you to the planet of your choosing.  Please click on the searchbar and search for the planet you want to travel to. Read the planet's details carefully and decide whether you want to add it to your travel list or not. You can remove them any time you change your mind.
       </h5>
-      <h5>Please enter a Star Wars Planet into the SearchBar below, click on the planet link that pops up, read the description and decide from there whether you want to go there or not.
-      </h5> 
+      
         <h1>Planet</h1>
         <div>
           <SearchBar SearchPlanets={this.searchPlanetByName} />
@@ -129,21 +132,30 @@ render() {
          
         </Switch> 
       </Router>     
-      </div>
-      </div>
+        </div> 
+        </div> }
     {/* This link enables us to change the status of the viewTravelList array that decides whether we can view the list of planets in your trip list or not. The viewTravelList array is a boolean value that if false, will not allow your list to display. If true, it will display. */}
     
      {this.state.viewTravelList && <div className="pageStyle2">
           <h1>List Trip</h1>
           {/* the <TravelList ...> and the routes below, enables us to access the Travel List component that enables us to view our Travel List when this.state.viewTravelList is equal to true.  */}
-          <TravelList planets={this.state.planets} travelList={this.state.travelList} removeFromTravelList={this.removeFromTravelList}/>
           <Route path='/list' render={() => (
-            <Planets planets={this.state.planets} />
-          )}/> 
+          <TravelList planets={this.state.planets} travelList={this.state.travelList} removeFromTravelList={this.removeFromTravelList}/>
+        )}/> 
+               
+        </div>}
+
+        {this.state.viewTravelList && <div className="pageStyle3">
+        
+          <h1>Planet Details</h1>
+          <div class="card w-50">
+         <div class="card-body">
              <Route path= '/list/:_id' render={(props) => (
       <PlanetInListDetail props={props} travelList={this.state.travelList} />      
  )}/>     
-        </div>}  
+ </div>
+       </div>
+        </div>}   
       </div>
     );
   }

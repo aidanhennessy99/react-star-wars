@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+// import Button from 'react-bootstrap';
+// import Card from 'react-ro-bootstrap';
 import React from "react";
 var baseURI = "../assets/"
 var endURI=  ".jpg";
@@ -17,17 +19,23 @@ const PlanetInListDetail = ({props, travelList}) => {
  
   return (
       <div className="details-of-List"> 
+         
+         
       {/* //The details that come back just like in the PlanetDetail component are an image, the name, climate, population, terrain, diameter and surface water of the planet. The big difference from PlaentDetail is that it does not have a button where you can add a new planet.    */}
-           <img src = {baseURI + TravelListPlanet.name + endURI} alt="img" height="100" width="100"/>
-        <h1>Name: {TravelListPlanet.name}</h1>    
-        <h2>Climate: {TravelListPlanet.climate}</h2>
-        <h3>Population: {TravelListPlanet.population}</h3>
-        <h3>Terrain: {TravelListPlanet.terrain}</h3>
-        <h4>Diameter: {TravelListPlanet.diameter}</h4>
-        <h5>Surface Water: {TravelListPlanet.surface_water}</h5>
+           <img src = {baseURI + TravelListPlanet.name + endURI} alt="img" class="card-img-top"/>
+           
+        <h5 className="card-text">Name: {TravelListPlanet.name}</h5>    
+        <h5 className="card-text">Climate: {TravelListPlanet.climate}</h5>
+        <h5 className="card-text">Population: {TravelListPlanet.population}</h5>
+        <h5 className="card-text">Terrain: {TravelListPlanet.terrain}</h5>
+        <h5 className="card-text">Diameter: {TravelListPlanet.diameter}</h5>
+        <h5 className="card-text">Surface Water: {TravelListPlanet.surface_water}</h5>
        {/* Handle Submit Click is going to be needed in this constant.  */}
         <Link to='/list'>Main Menu</Link>
+  
       </div>
+      
+ 
 
   )
 };

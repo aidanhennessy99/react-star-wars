@@ -48,7 +48,7 @@ body {
 }
   
 .pageStyle2 {
-  width: 45%;
+  width: 100%;
   overflow:auto;
 
   position: relative;
@@ -69,7 +69,7 @@ body {
 }
 
 .pageStyle3 {
-  width: 45%;
+  width: 100%;
   overflow:auto;
 
   position: relative;

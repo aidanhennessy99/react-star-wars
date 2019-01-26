@@ -29,6 +29,7 @@ const PlanetDetail = ({props, planets, addToTravelList}) => {
         <h5 className="card-text">Climate: {planet.climate}</h5>
         <h5 className="card-text">Population: {planet.population}</h5>
         <h5 className="card-text">Terrain: {planet.terrain}</h5>
+        <h5 className="card-text">Gravity: {planet.gravity}</h5>
         <h5 className="card-text">Diameter: {planet.diameter}</h5>
         <h5 className="card-text">Surface Water: {planet.surface_water}</h5>
        {/* Handle Submit Click is going to be needed in this constant.  */}

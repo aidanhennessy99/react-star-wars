@@ -19,7 +19,9 @@ const PlanetInListDetail = ({props, travelList}) => {
  
   return (
       <div className="details-of-List"> 
-         
+             <h1>Planet Details</h1>
+          <div class="card w-50">
+         <div class="card-body">
          
       {/* //The details that come back just like in the PlanetDetail component are an image, the name, climate, population, terrain, diameter and surface water of the planet. The big difference from PlaentDetail is that it does not have a button where you can add a new planet.    */}
            <img src = {baseURI + TravelListPlanet.name + endURI} alt="img" class="card-img-top"/>
@@ -28,11 +30,14 @@ const PlanetInListDetail = ({props, travelList}) => {
         <h5 className="card-text">Climate: {TravelListPlanet.climate}</h5>
         <h5 className="card-text">Population: {TravelListPlanet.population}</h5>
         <h5 className="card-text">Terrain: {TravelListPlanet.terrain}</h5>
+        <h5 className="card-text">Gravity: {TravelListPlanet.Gravity}</h5>
         <h5 className="card-text">Diameter: {TravelListPlanet.diameter}</h5>
         <h5 className="card-text">Surface Water: {TravelListPlanet.surface_water}</h5>
        {/* Handle Submit Click is going to be needed in this constant.  */}
         <Link to='/list'>Main Menu</Link>
   
+      </div>
+      </div>
       </div>
       
  

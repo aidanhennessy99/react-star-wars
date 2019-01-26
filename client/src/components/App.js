@@ -15,6 +15,7 @@ class App extends Component {
         this.state = {
             planets: [],
             travelList: [],
+            viewPlanetDetails: false,
             viewTravelList: false,
             viewSearchList: true
         }      
@@ -70,7 +71,7 @@ class App extends Component {
       ...this.state.travelList.slice(0, i),
       ...this.state.travelList.slice(i + 1),
     ];
-    this.setState({ travelList })
+    this.setState({ travelList, viewPlanetDetails: false, viewTravelList: true })
     fetch('http://localhost:8000/planets/' + _id, { method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },  
     }).then(res => {     
@@ -103,14 +104,14 @@ render() {
     <nav>
       <div className="navWide">    
           {/* <a href="/"><img src={Lens} class="center" width="30" height="30" /><font size="12" color="white">Search</font></a> */}
-          <Link to="/"><img src={Lens} class="center" width="30" height="30" /><a onClick={() => this.setState({ viewTravelList: false, viewSearchList: true })}><font size="12" color="white">Search</font></a> </Link>
-          <Link to="/list"><img src={ListPad} class="right" width="30" height="30" /><a onClick={() => this.setState({ viewTravelList: true, viewSearchList: false })}><font size="12" color="white">ListPad</font></a> </Link>
-          {/* <a href="/list" ><img src={ListPad} class="right" width="30" height="30" /><font size="12" color="white">ListPad</font></a> */}
+          <Link to="/"><img src={Lens} className="center" width="30" height="30" /><a onClick={() => this.setState({ viewTravelList: false, viewSearchList: true, viewPlanetDetails: false })}><font size="12" color="white">Search</font></a> </Link>
+          <Link to="/list"><img src={ListPad} className="right" width="30" height="30" /><a onClick={() => this.setState({ viewTravelList: true, viewSearchList: false, viewPlanetDetails: false })}><font size="12" color="white">Trip List</font></a> </Link>
+
       </div>
     </nav>
   </div>
   {/* Below is the content of the main page. The main page is also the search page, including the search bar. In the searchbar you can look up any planet in the Star Wars API. The index (/) route enables you to search for a planet while the index and name router (/:name) enables you to look up the details of the planet whose link you clicked on.  */}
-  {this.state.viewSearchList && <div className="pageStyle">
+  {this.state.viewSearchList && <div className="pageStyle"> 
       <h5>Welcome aboard the Millenium Falcon. We are excited to take you to the planet of your choosing.  Please click on the searchbar and search for the planet you want to travel to. Read the planet's details carefully and decide whether you want to add it to your travel list or not. You can remove them any time you change your mind.
       </h5>
       
@@ -136,29 +137,25 @@ render() {
         </div> }
     {/* This link enables us to change the status of the viewTravelList array that decides whether we can view the list of planets in your trip list or not. The viewTravelList array is a boolean value that if false, will not allow your list to display. If true, it will display. */}
     
-     {this.state.viewTravelList && <div className="pageStyle2">
+    {this.state.viewTravelList && <div className="pageStyle2"> 
           <h1>List Trip</h1>
           {/* the <TravelList ...> and the routes below, enables us to access the Travel List component that enables us to view our Travel List when this.state.viewTravelList is equal to true.  */}
           <Route path='/list' render={() => (
-          <TravelList planets={this.state.planets} travelList={this.state.travelList} removeFromTravelList={this.removeFromTravelList}/>
+          <TravelList planets={this.state.planets} travelList={this.state.travelList} removeFromTravelList={this.removeFromTravelList} onClick={this.state.viewTravelList = false} onClick={this.state.viewPlanetDetails = true}/>
         )}/> 
                
         </div>}
-
-        {this.state.viewTravelList && <div className="pageStyle3">
+        {/* <Link to="/list"> <button onClick={() => this.setState({ viewTravelList: false, viewSearchList: false,viewPlanetDetails: true })}>view Planet Details</button> </Link> */}
+        {this.state.viewPlanetDetails && <div className="pageStyle3"> {this.state.viewTravelList = false}
         
-          <h1>Planet Details</h1>
-          <div class="card w-50">
-         <div class="card-body">
+       
              <Route path= '/list/:_id' render={(props) => (
-      <PlanetInListDetail props={props} travelList={this.state.travelList} />      
+      <PlanetInListDetail props={props} planets={this.state.planets} travelList={this.state.travelList} onClick={this.state.viewTravelList = true} onClick={this.state.viewPlanetDetails = false}/>      
  )}/>     
- </div>
-       </div>
-        </div>}   
-      </div>
+
+</div>  } 
+      </div> 
     );
   }
 } 
 export default App;
-

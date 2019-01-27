@@ -18,6 +18,7 @@ app.use(cors());
 
 const mainRoutes = require('./routes/main')
 
+app.use(express.static('client/build'));
 
 app.use(mainRoutes)
 

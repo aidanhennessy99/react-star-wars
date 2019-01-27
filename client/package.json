@@ -45,7 +45,6 @@
   "bugs": {
     "url": "https://github.com/aidanhennessy99/react-star-wars/issues"
   },
-  "homepage": "https://github.com/aidanhennessy99/react-star-wars#readme",
   "proxy": "http://localhost:5000"
 }
 

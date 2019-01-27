@@ -2,8 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 var cors = require('cors');
-const URI = require('../config/index');
-
+const URI = require('./config/index');
 
 // mongoose.connect('mongodb://localhost/planets')
 mongoose.connect(process.env.MONGOLAB_IVORY_URI || URI);

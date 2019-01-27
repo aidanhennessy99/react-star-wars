@@ -33,7 +33,7 @@ class App extends Component {
 
 //This returns all planets that are in your database as opposed to the Star Wars API database. 
   fetchData = () => {
-    fetch("http://localhost:8000/planets", {
+    fetch("http://localhost:5000/planets", {
       method: "GET",
       dataType: "JSON",
       headers: {
@@ -52,7 +52,7 @@ class App extends Component {
 //This enables you to both post an item into your backend database as well your front end travelList array. 
   addToTravelList = (planet) => {
     const {name, climate, terrain, gravity, population, diameter, surface_water } = planet;
-    fetch('http://localhost:8000/planets', {
+    fetch('http://localhost:5000/planets', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({name, climate, terrain, gravity, population, diameter, surface_water }),

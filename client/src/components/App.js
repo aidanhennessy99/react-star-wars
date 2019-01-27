@@ -72,7 +72,7 @@ class App extends Component {
       ...this.state.travelList.slice(i + 1),
     ];
     this.setState({ travelList, viewPlanetDetails: false, viewTravelList: true })
-    fetch('http://localhost:8000/planets/' + _id, { method: 'DELETE',
+    fetch('http://localhost:5000/planets/' + _id, { method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },  
     }).then(res => {     
       console.log('TRAVEL LIST REDUCED: ', this.state.travelList)            

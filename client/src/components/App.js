@@ -51,11 +51,11 @@ class App extends Component {
 
 //This enables you to both post an item into your backend database as well your front end travelList array. 
   addToTravelList = (planet) => {
-    const {name, climate, terrain, population, diameter, surface_water } = planet;
+    const {name, climate, terrain, gravity, population, diameter, surface_water } = planet;
     fetch('http://localhost:8000/planets', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({name, climate, terrain, population, diameter, surface_water }),
+      body: JSON.stringify({name, climate, terrain, gravity, population, diameter, surface_water }),
   }).then(res => res.json()).then((res) => {
    
   this.setState({travelList: this.state.travelList.concat([res])}, () => {
@@ -99,21 +99,55 @@ render() {
 <div>
 
   {/* //Change button class to classname. */}
-  <div className="PageHeader">
-  {/* This is the Page Header that is colored in light blue and down below is the navbar with a search link and a travel list link.  */}
-    <nav>
-      <div className="navWide">    
-          {/* <a href="/"><img src={Lens} class="center" width="30" height="30" /><font size="12" color="white">Search</font></a> */}
-          <Link to="/"><img src={Lens} className="center" width="30" height="30" /><a onClick={() => this.setState({ viewTravelList: false, viewSearchList: true, viewPlanetDetails: false })}><font size="12" color="white">Search</font></a> </Link>
-          <Link to="/list"><img src={ListPad} className="right" width="30" height="30" /><a onClick={() => this.setState({ viewTravelList: true, viewSearchList: false, viewPlanetDetails: false })}><font size="12" color="white">Trip List</font></a> </Link>
-
-      </div>
-    </nav>
+  {/* <div className="PageHeader"> */}
+  <header class="navbar navbar-expand navbar-dark bg-primary flex-column flex-md-row bd-navbar">
+  <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Bootstrap">Star Wars Planets
+</a>
+  <div class="navbar-nav-scroll">
+    <ul class="navbar-nav bd-navbar-nav flex-row">
+      <li class="nav-item">
+      <Link to="/"><a class="nav-link" onClick={() => this.setState({ viewTravelList: false, viewSearchList: true, viewPlanetDetails: false })}><font size="4" color="white">Search</font></a></Link>
+      </li>
+      <li class="nav-item">
+      <Link to="/list"><a class="nav-link" onClick={() => this.setState({ viewTravelList: true, viewSearchList: false, viewPlanetDetails: false })}><font size="4" color="white">Trip List</font></a> </Link>
+      </li>
+  </ul>
   </div>
+</header>
+
+  {/* This is the Page Header that is colored in light blue and down below is the navbar with a search link and a travel list link.  */}
+  {/* <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand mr-0 mr-md-2" href="../assets/StarWarsLogo.jpg" aria-label="Bootstrap">
+  <svg class="d-block" width="36" height="36" viewBox="0 0 612 612" xmlns="../assets/StarWarsLogo.jpg" focusable="false" role="img"><title>Bootstrap</title></svg>
+</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+      <Link to="/"><a class="nav-link" onClick={() => this.setState({ viewTravelList: false, viewSearchList: true, viewPlanetDetails: false })}><font size="6" color="white">Search</font></a> </Link>
+      </li>
+      <li class="nav-item">
+      <Link to="/list"><a class="nav-link" onClick={() => this.setState({ viewTravelList: true, viewSearchList: false, viewPlanetDetails: false })}><font size="6" color="white">Trip List</font></a> </Link>
+      </li>
+    </ul>
+  </div>
+</nav> */}
+  
+  {/* </div> */}
   {/* Below is the content of the main page. The main page is also the search page, including the search bar. In the searchbar you can look up any planet in the Star Wars API. The index (/) route enables you to search for a planet while the index and name router (/:name) enables you to look up the details of the planet whose link you clicked on.  */}
   {this.state.viewSearchList && <div className="pageStyle"> 
-      <h5>Welcome aboard the Millenium Falcon. We are excited to take you to the planet of your choosing.  Please click on the searchbar and search for the planet you want to travel to. Read the planet's details carefully and decide whether you want to add it to your travel list or not. You can remove them any time you change your mind.
-      </h5>
+  <font size="4">Welcome aboard the Millenium Falcon.</font>
+      <ul>
+      <li><h6> We are excited to take you to the planet of your choosing.  Please click on the searchbar and search for the planet you want to travel to. 
+      </h6>
+      <li><h6>Read the planet's details carefully and decide whether you want to add it to your travel list or not.</h6></li>
+      <li><h6>You can remove planets from your list any time you change your mind.</h6></li>
+     
+      </li>
+      </ul>
       
         <h1>Planet</h1>
         <div>

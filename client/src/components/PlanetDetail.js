@@ -13,6 +13,8 @@ const PlanetDetail = ({props, planets, addToTravelList}) => {
   if (!planet) {
     return <div>Sorry But the Planet was not found<Link to='/'> Back</Link></div>;   
   }
+
+
   
   //This connects back to the addToTravelList function in app.js and the handleClick feature will activate the button at the bottom to connect directly towards App.js in posting a new planet to the travelList array and your back end database.
   const handleClick = () => {
@@ -23,7 +25,6 @@ const PlanetDetail = ({props, planets, addToTravelList}) => {
       <div className="details">
     {/* An image, the name, climate, population, terrain, diameter and surface water all appear when we click on the planet link to view details.      */}
     <div class="card w-25">
-      <div className="card-body">
         <img src = {baseURI + planet.name + endURI} alt="img" height="100" width="100"/>       
         <h5 className="card-text">Name: {planet.name}</h5>   
         <h5 className="card-text">Climate: {planet.climate}</h5>
@@ -36,7 +37,7 @@ const PlanetDetail = ({props, planets, addToTravelList}) => {
        {/* This is the button that posts the planet to your travelList and your backend database. */}
         <button type="button" onClick={handleClick}>Add Planet to Travel List</button>
         <Link to='/'>Roster</Link>
-        </div>
+
         </div>
       </div>
 

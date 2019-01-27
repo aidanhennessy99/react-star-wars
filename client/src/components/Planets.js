@@ -9,24 +9,32 @@ var endURI=  ".jpg";
 class Planets extends React.Component {
   render () { 
     return (
-      <div className="planets"> 
-        <ul>
+//       <div class="d-flex flex-row bd-highlight mb-3">
+//   <div class="p-2 bd-highlight">Flex item 1</div>
+//   <div class="p-2 bd-highlight">Flex item 2</div>
+//   <div class="p-2 bd-highlight">Flex item 3</div>
+// < /div>
+      <div className="list-unstyled"> 
+        
+        <ul className="list-unstyled"> 
           {          
             this.props.planets.map(p => (
-              <li key={p.name}>
+              <li key={p.name} className="results">
               
-              <div class="card w-25">
-                  <div className="card-body">
+              <div class="card w-100 p-2 bd-highlight">
+                  
                   <Link to={`/${p.name}`}><img src={baseURI + p.name + endURI} class="card-img-top"/></Link>
-              <h5 className="card-title"><Link to={`/${p.name}`}>{p.name}</Link></h5>    
-              </div>
-              </div>          
+              <h6 className="card-title"><Link to={`/${p.name}`}>{p.name}</Link></h6>    
+             
+              </div> 
+              <br />         
               </li>            
             ))
           }
         </ul> 
  
       </div>
+   
     );
   }
 }

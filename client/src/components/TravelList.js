@@ -17,7 +17,7 @@ const TravelList = ({travelList, removeFromTravelList} ) => {
   
     return (
 
-      <div className="lists">  
+      <div className="list-unstyled">  
          
         <ul className="list-unstyled">
      
@@ -27,9 +27,7 @@ const TravelList = ({travelList, removeFromTravelList} ) => {
               <li key={p._id} className="list">
       {/* //It returns the name of the planet as well as a details link that connects back to the details in the PlanetInListDetail component.       */}
       
-      <div className="card w-50">
-     
-      <div className="card-body">        
+      <div className="card w-100">       
               
               <Link to={`/list/${p._id}`}><img src={baseURI + p.name + endURI} className="card-img-top" alt="img" width="100"/></Link>
            
@@ -40,7 +38,6 @@ const TravelList = ({travelList, removeFromTravelList} ) => {
             <p className="card-text">  <Link to={`/list/${p._id}`} >Details</Link> </p> 
                 {/* //This is the button that enables you to delete a planet from your trip list if you decide you do not want to go there. */}
                 <button className="btn btn-primary" type="button" onClick={()=>handleClick(p._id)}> Remove From List </button>
-                </div>
                 </div>
      
              

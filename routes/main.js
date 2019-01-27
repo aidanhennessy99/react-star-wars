@@ -18,6 +18,7 @@ router.get('/generate-dummy-data', async (req, res) => {
         name: 'Alderaan',
         climate: 'temperate',
         terrain: 'grasslands, mountains',
+        gravity: '1 standard',
         population: '2000000000',
         diameter: '12500',
         surface_water: '40'
@@ -59,6 +60,7 @@ router.get('/generate-dummy-data', async (req, res) => {
             name: planet.name,
             climate: planet.climate, 
             terrain: planet.terrain,
+            gravity: planet.gravity,
             population: planet.population,
             diameter: planet.diameter,
             surface_water: planet.surface_water

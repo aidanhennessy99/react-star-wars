@@ -22,8 +22,8 @@ body {
   .PageHeader {
     text-align: center;
     
-    background-color: #2F9AFF; 
-    color: yellow;
+    /* background-color: #2F9AFF;  */
+    /* color: yellow; */
     overflow: auto;
   }
 
@@ -39,11 +39,9 @@ body {
     padding: 10px;
   
     margin-bottom: 30px;
-  
-    border: 10px #1963E8 solid;
 
     cursor: pointer;
-    background-color: white; 
+    /* background-color: white;  */
     color: black;
 }
   
@@ -60,8 +58,6 @@ body {
   padding: 10px;
 
   margin-bottom: 30px;
-
-  border: 10px #1963E8 solid;
 
   cursor: pointer;
   background-color: white; 
@@ -82,9 +78,60 @@ body {
 
   margin-bottom: 30px;
 
-  border: 10px #1963E8 solid;
-
   cursor: pointer;
   background-color: white; 
   color: black;
+}
+
+.list-unstyled {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  width: 100%;
+
+  min-height: 600px;
+
+}
+
+
+
+.list-unstyled .list {
+
+  width: 50%;
+
+  position: relative;
+
+  text-align: center;
+
+  box-sizing: border-box;
+
+  padding: 10px;
+
+  margin-bottom: 30px;
+
+  border: 1px solid transparent;
+
+  cursor: pointer;
+
+}
+
+.list-unstyled .results{
+
+  width: 50%;
+
+  position: relative;
+
+  text-align: center;
+
+  box-sizing: border-box;
+
+  padding: 10px;
+
+  margin-bottom: 30px;
+
+  border: 1px solid transparent;
+
+  cursor: pointer;
 }

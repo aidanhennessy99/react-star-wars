@@ -5,6 +5,7 @@ const PlanetSchema = new Schema({
   name: String,
   climate: String,
   terrain: String,
+  gravity: String,
   population: String,
   diameter: String,
   surface_water: String

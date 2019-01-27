@@ -30,6 +30,7 @@ router.post('/lists/:id', (req, res) => {
           name: req.body.name,
           climate: req.body.climate, 
           terrain: req.body.terrain,
+          gravity: req.body.gravity,
           population: req.body.population,
           diameter: req.body.diameter,
           surface_water: req.body.surface_water

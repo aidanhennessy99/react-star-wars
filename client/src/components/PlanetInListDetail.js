@@ -25,7 +25,7 @@ const PlanetInListDetail = ({props, travelList}) => {
              <h1>Planet Details</h1>
       </div>
       <div className="mx-auto">
-        <div className="card-columns">
+        <div className="card-columns d-flex justify-content-center">
           <div className="card">
         
          

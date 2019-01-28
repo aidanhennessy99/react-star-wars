@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 import TravelList from './TravelList';
-import Lens from '../instagramPhoto/Lens3.png'
-import ListPad from '../instagramPhoto/ListPad.png';
 import PlanetInListDetail from './PlanetInListDetail'
 import PlanetDetail from './PlanetDetail';
 import Planets from './Planets';

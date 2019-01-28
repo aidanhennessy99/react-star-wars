@@ -99,7 +99,7 @@ render() {
   {/* //Change button class to classname. */}
   {/* <div className="PageHeader"> */}
   <header class="navbar navbar-expand navbar-dark bg-primary flex-column flex-md-row bd-navbar">
-  <a className="title" href="/" aria-label="Bootstrap">Star Wars Planets
+  <a className="navbar-brand mr-0 mr-md-2" href="/" aria-label="Bootstrap">Star Wars Planets
 </a>
   <div class="navbar-nav-scroll">
     <ul class="navbar-nav bd-navbar-nav flex-row">

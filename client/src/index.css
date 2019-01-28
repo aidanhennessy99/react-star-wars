@@ -145,5 +145,6 @@ body {
 
 .details .card-columns .card{
   margin: 0 auto;
+  float: center;
   text-align: left;
 }

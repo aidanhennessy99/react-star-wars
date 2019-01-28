@@ -37,6 +37,7 @@ const PlanetDetail = ({props, planets, addToTravelList}) => {
        {/* Handle Submit Click is going to be needed in this constant.  */}
        {/* This is the button that posts the planet to your travelList and your backend database. */}
         <button type="button" onClick={handleClick}>Add Planet to Travel List</button>
+        <br />
         <Link to='/'>Main Menu</Link>
 
         </div>

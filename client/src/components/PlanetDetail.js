@@ -22,7 +22,8 @@ const PlanetDetail = ({props, planets, addToTravelList}) => {
     props.history.push('/');
   }
   return (
-      <div className="details text-center">
+      
+      <div className="details">
       <div className="card-columns">
     {/* An image, the name, climate, population, terrain, diameter and surface water all appear when we click on the planet link to view details.      */}
     <div class="card">

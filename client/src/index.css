@@ -155,11 +155,11 @@ body {
   
 }
 
-.list-details{
+.list-details .row justify-content-md-center .card-columns d-flex justify-content-center .card{
   margin: 0 auto;
 }
 
-.details .row justify-content-md-center .card-columns d-flex justify-content-center .card{
+.details .card-columns .card{
   margin: 0 auto;
   float: none;
 }

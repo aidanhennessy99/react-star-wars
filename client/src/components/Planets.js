@@ -21,7 +21,7 @@ class Planets extends React.Component {
             this.props.planets.map(p => (
               <li key={p.name} className="results">
               
-              <div className="card w-100">
+              <div className="card w-100 p-2 bd-highlight">
                   
                   <Link to={`/${p.name}`}><img src={baseURI + p.name + endURI} class="card-img-top"/></Link>
               <h6 className="card-title"><Link to={`/${p.name}`}>{p.name}</Link></h6>    

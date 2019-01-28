@@ -24,7 +24,7 @@ const PlanetDetail = ({props, planets, addToTravelList}) => {
   return (
       <div className="details">
     {/* An image, the name, climate, population, terrain, diameter and surface water all appear when we click on the planet link to view details.      */}
-    <div class="card w-50">
+    <div class="card">
         <img src = {baseURI + planet.name + endURI} alt="img" class="card-img-top" />       
         <h5 className="card-text">Name: {planet.name}</h5>   
         <h5 className="card-text">Climate: {planet.climate}</h5>
@@ -36,7 +36,7 @@ const PlanetDetail = ({props, planets, addToTravelList}) => {
        {/* Handle Submit Click is going to be needed in this constant.  */}
        {/* This is the button that posts the planet to your travelList and your backend database. */}
         <button type="button" onClick={handleClick}>Add Planet to Travel List</button>
-        <Link to='/'>Back</Link>
+        <Link to='/'>Main Menu</Link>
 
         </div>
       </div>

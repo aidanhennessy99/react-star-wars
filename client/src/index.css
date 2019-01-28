@@ -155,7 +155,7 @@ body {
   
 }
 
-.list-details .row justify-content-md-center .card-columns d-flex justify-content-center .card{
+.list-details .row justify-content-md-center .card-columns d-flex justify-content-center{
   margin: 0 auto;
   float: none;
 }

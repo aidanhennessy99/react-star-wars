@@ -155,12 +155,10 @@ body {
   
 }
 
-.details-of-list {
-  text-align: center;
+.details-of-list .card-columns {
   margin: 0 auto;
 }
 
-.details {
-  text-align: center;
+.details .card-columns {
   margin: 0 auto;
 }

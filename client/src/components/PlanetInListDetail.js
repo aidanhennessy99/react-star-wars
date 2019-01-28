@@ -20,7 +20,7 @@ const PlanetInListDetail = ({props, travelList}) => {
   }
  
   return (
-      <div className="details-of-List"> 
+      <div className="details-of-List text-center"> 
              <h1>Planet Details</h1>
         <div className="card-columns">
           <div className="card">

@@ -15,7 +15,7 @@ class Planets extends React.Component {
 //   <div class="p-2 bd-highlight">Flex item 3</div>
 // < /div>
       <div className="card-columns">
-      <div className="list-unstyled"> 
+      {/* <div className="list-unstyled">  */}
         
    
           {          
@@ -34,7 +34,7 @@ class Planets extends React.Component {
           }
  
           </div>
-      </div>
+      // </div>
    
     );
   }

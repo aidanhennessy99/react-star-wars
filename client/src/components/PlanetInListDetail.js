@@ -20,10 +20,11 @@ const PlanetInListDetail = ({props, travelList}) => {
   }
  
   return (
-    <div className='list-details'>
+    <div className="list-details">
       <div className="details-of-List text-center"> 
              <h1>Planet Details</h1>
       </div>
+      <div className="d-flex justify-content-center bg-secondary mb-1">
         <div className="card-columns">
           <div className="card">
         
@@ -44,6 +45,7 @@ const PlanetInListDetail = ({props, travelList}) => {
         <Link to='/list'>Main Menu</Link>
   
       
+      </div>
       </div>
       </div>
       </div>

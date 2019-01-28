@@ -28,7 +28,7 @@ const TravelList = ({travelList, removeFromTravelList} ) => {
            
             <p className="card-text">  <Link to={`/list/${p._id}`} ><button className="btn btn-primary">Details</button></Link> </p> 
                 {/* //This is the button that enables you to delete a planet from your trip list if you decide you do not want to go there. */}
-                <br />
+              
                 <button className="btn btn-primary" type="button" onClick={()=>handleClick(p._id)}> Remove From List </button>
                  
        

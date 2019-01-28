@@ -170,7 +170,7 @@ render() {
     {/* This link enables us to change the status of the viewTravelList array that decides whether we can view the list of planets in your trip list or not. The viewTravelList array is a boolean value that if false, will not allow your list to display. If true, it will display. */}
     
     {this.state.viewTravelList && <div className="pageStyle2"> 
-          <h1>List Trip</h1>
+          <h1>Trip List</h1>
           {/* the <TravelList ...> and the routes below, enables us to access the Travel List component that enables us to view our Travel List when this.state.viewTravelList is equal to true.  */}
           <Route path='/list' render={() => (
           <TravelList planets={this.state.planets} travelList={this.state.travelList} removeFromTravelList={this.removeFromTravelList} onClick={this.state.viewTravelList = false} onClick={this.state.viewPlanetDetails = true}/>

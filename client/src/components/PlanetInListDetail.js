@@ -24,9 +24,9 @@ const PlanetInListDetail = ({props, travelList}) => {
       <div className="details-of-List text-center"> 
              <h1>Planet Details</h1>
       </div>
-     
+      <div className="row justify-content-md-center">
         <div className="card-columns d-flex justify-content-center">
-        <div class="row justify-content-md-center">
+       
           <div className="card">
         
          

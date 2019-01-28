@@ -19,7 +19,7 @@ const TravelList = ({travelList, removeFromTravelList} ) => {
 
       <div className="list-unstyled">  
          
-        <ul className="list-unstyled">
+      
      
  
           {          
@@ -49,7 +49,7 @@ const TravelList = ({travelList, removeFromTravelList} ) => {
           }
        
             
-        </ul>
+     
          </div>
 
       

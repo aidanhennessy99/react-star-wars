@@ -16,7 +16,7 @@ class Planets extends React.Component {
 // < /div>
       <div className="list-unstyled"> 
         
-        <ul className="list-unstyled"> 
+   
           {          
             this.props.planets.map(p => (
               <li key={p.name} className="results">
@@ -31,7 +31,7 @@ class Planets extends React.Component {
               </li>            
             ))
           }
-        </ul> 
+ 
  
       </div>
    

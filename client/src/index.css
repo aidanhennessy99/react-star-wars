@@ -154,3 +154,13 @@ body {
   }
   
 }
+
+.details-of-list {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.details {
+  text-align: center;
+  margin: 0 auto;
+}

@@ -120,6 +120,7 @@ body {
 @media (min-width: 768px) {
   .card-columns {
     column-count: 1;
+    text-align: left;
   }
 }
 

@@ -24,7 +24,7 @@ const PlanetDetail = ({props, planets, addToTravelList}) => {
   return (
       <div className="details">
     {/* An image, the name, climate, population, terrain, diameter and surface water all appear when we click on the planet link to view details.      */}
-    <div class="card w-25">
+    <div class="card w-50">
         <img src = {baseURI + planet.name + endURI} alt="img" class="card-img-top" />       
         <h5 className="card-text">Name: {planet.name}</h5>   
         <h5 className="card-text">Climate: {planet.climate}</h5>

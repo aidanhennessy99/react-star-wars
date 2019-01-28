@@ -24,13 +24,13 @@ const PlanetInListDetail = ({props, travelList}) => {
       <div className="details-of-List text-center"> 
              <h1>Planet Details</h1>
       </div>
-      
+      <div class="row justify-content-md-center">
         <div className="card-columns d-flex justify-content-center">
           <div className="card">
         
          
       {/* //The details that come back just like in the PlanetDetail component are an image, the name, climate, population, terrain, diameter and surface water of the planet. The big difference from PlaentDetail is that it does not have a button where you can add a new planet.    */}
-           <img src = {baseURI + TravelListPlanet.name + endURI} alt="img" class="card-img-top" max-width="1500" max-height="1500"/>
+           <img src = {baseURI + TravelListPlanet.name + endURI} alt="img" class="card-img-top"/>
            
         <h5 className="card-text">Name: {TravelListPlanet.name}</h5>    
         <h5 className="card-text">Climate: {TravelListPlanet.climate}</h5>
@@ -45,6 +45,7 @@ const PlanetInListDetail = ({props, travelList}) => {
         <Link to='/list'>Main Menu</Link>
   
       
+      </div>
       </div>
       </div>
       </div>

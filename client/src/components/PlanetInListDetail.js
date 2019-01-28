@@ -22,8 +22,8 @@ const PlanetInListDetail = ({props, travelList}) => {
   return (
       <div className="details-of-List text-center"> 
              <h1>Planet Details</h1>
-        <div className="card-columns">
-          <div className="card">
+        <div className="card-columns center">
+          <div className="card center">
         
          
       {/* //The details that come back just like in the PlanetDetail component are an image, the name, climate, population, terrain, diameter and surface water of the planet. The big difference from PlaentDetail is that it does not have a button where you can add a new planet.    */}

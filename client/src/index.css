@@ -136,7 +136,7 @@ body {
   cursor: pointer;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .card-columns {
     column-count: 1
   }

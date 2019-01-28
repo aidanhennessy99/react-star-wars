@@ -28,7 +28,7 @@ const TravelList = ({travelList, removeFromTravelList} ) => {
            
               <Link to={`/list/${p._id}`} ><button className="btn btn-primary">Details</button></Link>
                 {/* //This is the button that enables you to delete a planet from your trip list if you decide you do not want to go there. */}
-                <button className="btn btn-primary" type="button" align="right" onClick={()=>handleClick(p._id)}> Remove From List </button>
+                <button className="btn btn-primary" type="button" style="float: right" onClick={()=>handleClick(p._id)}> Remove From List </button>
                  
        
               </div>            

@@ -32,7 +32,7 @@ body {
     width: 100%;
     overflow:auto;
     position: relative;  
-    text-align: center;
+    text-align: left;
   
     box-sizing: border-box;
   
@@ -137,13 +137,12 @@ body {
   
 }
 
-.list-details {
+.list-details  {
   margin: 0 auto;
-  float: center;
-  text-align: center;
 }
 
-.details .card-columns .card{
+.details .row justify-content-md-center .card-columns d-flex justify-content-center .card{
   margin: 0 auto;
   float: none;
+  text-align: center;
 }
